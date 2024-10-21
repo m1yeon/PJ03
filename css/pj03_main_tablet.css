@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* tablet */
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+  /* 메인배너  */
+  .con01{position: relative; padding-top: 147px; height: fit-content;}
+  .con01_slide > a > img{height: auto; width: 100%;}
+
+  /* 마우스 오버 효과 지우기 */
+  .story:hover .imgBox > .news_img{transform: none;}
+  .story:hover .txtBox > .ntitle{text-decoration: none;}
+  
+  /* best stories */
+  .con02_title{height: 54px; background: #fff; border: 1px solid #222;}
+  .con02_title > h2{line-height: 54px; font-size: 1.75rem; color: #222;}
+  .con02_title > button{display: none;}
+  .con02_slider{width: 300%;}
+  .con02_slider > .slide{width: 100%;}
+
+  /* 3.fashion, 6. culure */
+  .con03 > .part1, .con06 > .part1{width: 100%;}
+  .con03 > .part2, .con06 > .part2{display: none;}
+
+  /* 4. beauty */
+  .con04 .con04_article > li:last-child{display: none;}
+
+  /* 5. love&life */
+  .con05 .con05_article > li:last-child{display: none;}
+
+  /* 7. social */
+  .con07 .article_cont{display: block;}
+  .con07 .article_cont li{
+    width: 100%;
+    padding-bottom: 30px;
+  }
+
+  .con07 .article_cont li:nth-child(4){display: none;}
+  .con07 .article_cont li:last-child{display: none;}
+
+  .con07 ul > li .txtBox .n_txt{
+    font-size: 15px;
+    font-size: 0.938rem;
+    white-space: wrap;
+  }
+}

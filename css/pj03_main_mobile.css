@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+/* mobile */
+@media screen and (max-width:767px) {
+
+  /* 메인배너 */
+  .con01{height: calc(100vh - 55px); padding-top: 55px;}
+  .con01 .con01_slide img{height: calc(100vh - 55px);}
+  .con01 .slide1 img{content: url(../image/mbanner_ballet_mobile.jpg);}
+  .con01 .slide2 img{content: url(../image/mbanner_ballet_mobile.jpg);}
+
+  /* 공통서식 */
+  section:not(.con01){margin: 70px auto 0px auto;}
+
+  .article_title{
+    line-height: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-top: 1px solid #222;
+    border-bottom: 3px solid #222;
+  }
+  .article_title > h2{
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+  .article_title > .btn_more{
+    color: rgba(0,0,0,0);
+  }
+  .article_title > .btn_more > img{
+    width: 16px;
+    transform: translateY(2px);
+  }
+  .article_cont{gap: 20px;}
+
+  /* 텍스트 박스 */
+  .txtBox > .ncate {
+    font-size: 12.5px;
+    font-size: 0.781rem;
+  }
+  .txtBox > .ntitle {
+    font-size: 16px;
+    font-size: 1rem;
+    padding: 5px 0px;
+  }
+
+  .txtbox > .ndate {
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+  /* 마우스 오버 효과 지우기 */
+  .story:hover .imgBox > .news_img{transform: none;}
+  .story:hover .txtBox > .ntitle{text-decoration: none;}
+
+  /* 이미지 박스 _ 이미지 정사각형 */
+  .con03 .imgBox{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .con03 .imgBox::before{
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+  }
+  
+  .con03 .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 이미지 안 하트, 공유 버튼 */
+  .imgBox > button{bottom: 12px; width: 34px; height: 34px;}
+  .imgBox > .btnShare{display: none;}
+  .imgBox > .btnHeart{right: 15px;}
+  .imgBox > .btnHeartfull{right: 15px;}
+
+  /* 2. best */
+  .con02_title{
+    height: 50px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #222;
+  }
+  .con02_title > h2{
+    line-height: 50px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    color: #222;
+  }
+  .con02_title > button{display: none;}
+  .con02_slider{width: 500%; gap: 15px;}
+  .con02_slider > .slide{width: 100%;}
+  .con02_slider > .slide > .bestNum{font-size: 23px; font-size: 1.438rem;}
+
+  /* 3. fashion */
+  .part1{width: 100%;}
+  .con03  .part1  .m_fashion{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .con03  .part1  .m_fashion .txtBox{
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    z-index: 9;
+    width: 70%;
+  }
+  .con03  .part1  .m_fashion .txtBox .ncate{color: #d00;}
+  .con03  .part1  .m_fashion .txtBox .ndate{color: #ccc;}
+  .con03  .part1  .m_fashion .txtBox .ntitle{color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .con03 > .part1 > .con03_article > li:first-child, .con03 > .part1 > .con03_article > li:nth-child(2){display: none;}
+  .con03 .part1 .article_cont > li{width: 100%;}
+  .con03_article > li > a{display: flex; gap: 20px;}
+  .con03_article .imgBox{margin: 0px;}
+  .con03_article .txtBox{margin: 0px;}
+  .con03 .side_story{display: none;}
+
+/* 4. beauty */
+.con04_article > li:nth-child(3) {display: none;}
+.con04_article > li:last-child {display: none;}
+.con04_article{display: block;}
+
+.con04 > .article_cont > li{
+  position: relative;
+}
+.con04 > .article_cont > li:first-child{margin-bottom: 20px;}
+.con04 > .article_cont .txtBox{
+  position: absolute;
+  z-index: 9;
+  left: 15px;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 80%; */
+}
+.con04 > .article_cont .txtBox .ncate{
+  order: 1;
+  color: #d00;
+  padding-right: 10px;
+}
+.con04 > .article_cont .txtBox .ntitle{
+  order: 3;;
+  color: #fff;
+  width: 100%;
+}
+.con04 > .article_cont .txtBox .ndate{
+  order: 2;
+  color: #ccc;
+}
+/* 5. love&life */ 
+.con05_article{
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.con05_article > li:first-child{
+  width: 100%;
+  gap: 20px;
+}
+.con05_article > li:not(:first-child){
+  width: calc(50% - 10px);
+}
+.con05_article > li:not(:first-child) .txtBox{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0px 0px 0px;
+}
+.con05_article > li:not(:first-child) .txtBox .ncate{color: #c00; order: 1;}
+.con05_article > li:not(:first-child) .txtBox .ntitle{color: #222; order: 2;}
+.con05_article > li:not(:first-child) .txtBox .ndate{order: 3;}
+
+.con05 .imgBox{
+  display: inline-block;
+  width: 100%;
+}
+
+
+
+/* 6. culture */
+.con06 > .part2{display: none;}
+.con06 > .part1{width: 100%;}
+.con06 ul li:first-child{padding-bottom: 20px;}
+.hr_article > li > a{gap: 10px}
+.hr_article > li .imgBox{width: 50%;}
+.hr_article > li .txtBox{width: 50%; height: fit-content;}
+.hr_article > li .txtBox .n_txt{
+  -webkit-line-clamp: 2;
+  padding-top: 10px;
+  line-height: 140%;
+}
+
+  /* 이미지 박스 _ 이미지 정사각형 */
+  .con06 .imgBox, .con07 .imgBox{
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .con05 .imgBox::before, .con06 .imgBox::before, .con07 .imgBox::before{
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+  }
+  
+  .con05 .imgBox img, .con06 .imgBox img, .con07 .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* 7. social */
+  .con07 .article_cont li{width: 100%;}
+  .con07 ul{gap: 20px;}
+  .con07 ul li:nth-child(1){display: none;}
+  .con07 ul li:nth-child(3){display: none;}
+  .con07 ul li:nth-child(6){display: none;}
+}
+
+

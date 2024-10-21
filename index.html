@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+  <title>보그 코리아 | VOGUE KOREA</title>
+  <!-- 파비콘 삽입하기 -->
+  <link href="./image/favicon.ico" type="image/x-icon" rel="shortcut icon">
+  <!-- 1. 초기화 -->
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <!-- 2. base_ 전체문서 공통 서식(폰트, 컬러 등)-->
+  <link rel="stylesheet" href="./css/pj03_base.css" type="text/css">
+  <!-- 3. layout_(메인화면 헤더, 푸터 서식) -->
+  <link rel="stylesheet" href="./css/pj03_layout.css" type="text/css">
+  <!-- 4. PC 서식 -->
+  <link rel="stylesheet" href="./css/pj03_main_pc.css" type="text/css">
+  <!-- 5. TABELT 서식 -->
+  <link rel="stylesheet" href="./css/pj03_main_tablet.css" type="text/css">
+  <!-- 6.MOBILE 서식 -->
+  <link rel="stylesheet" href="./css/pj03_main_mobile.css" type="text/css">
+  <!-- 폰트 어썸 링크 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" type="text/css">
+</head>
+<body>
+  <!-- 헤더영역 -->
+  <header>
+    <div class="headerWrapper">
+      <input type="checkbox" id="menu">
+
+      <!-- header_mid -->
+      <div class="h_mid_wrapper">
+        <div class="h_mid">
+          <h1><a href="./index.html" title="메인페이지 바로가기"></a></h1>
+
+          <div class="h_mid_left">
+            <p class="hml_txt01">Fashion Magazine</p>
+            <P class="hml_txt02">Get Beauty Tips, Fashion Trends</P>
+          </div>
+
+          <div class="h_mid_right searchWrap">
+            <a href="javascript:void(0)" title="로그인 페이지" class="login_btn">LOGIN</a>
+            <a href="javascript:void(0)" title="회원가입 페이지" class="login_btn">SIGN UP</a>
+            <input type="checkbox" id="btn_search1">
+            <label for="btn_search1" class="search">
+              <img src="./image/ic_search28.png" alt="icon_search">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- header_top -->
+      <div class="h_top">
+        <p id="date_info"></p>
+        <div class="h_top_right">
+          <span class="weather"><img src="./image/ic_sunny.png" alt="날씨이미지" class="w_img">28&#186;C&nbsp;ㅣ</span>
+          <select name="language" id="lan">
+            <option value="한국어">한국어</option>
+            <option value="English">English</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- header_bottom -->
+      <div class="h_bottom_wrapper">
+        <div class="h_bottom">
+          <!-- 전체 메뉴 (PC, TABLET 메인, 서브에서 노출/모바일 미노출) -->
+          <label for="menu" class="menu_btn">
+            <!-- <img src="./image/icon_menu28.png" alt="icon_menu"> -->
+            <span></span>
+          </label>
+          <!-- 로고_스크롤 시 나타나게 -->
+          <strong class="hb_logo">
+            <a href="/" title="vogue"><img src="./image/logo_vogue_small.png" alt="vogue"></a>
+          </strong>
+          <!-- 메뉴 -->
+          <nav class="h_gnb">
+            <ul>
+              <li><a href="javascript:void(0)" title="FASHION">FASHION</a></li>
+              <li><a href="javascript:void(0)" title="BEAUTY">BEAUTY</a></li>
+              <li><a href="javascript:void(0)" title="LOVE&LIFE">LOVE&LIFE</a></li>
+              <li><a href="javascript:void(0)" title="CULTURE">CULTURE</a></li>
+              <li><a href="javascript:void(0)" title="SOCIAL">SOCIAL</a></li>
+            </ul>
+          </nav>
+          <!-- 로그인, 검색_스크롤 시 나타나게 -->
+          <div class="searchWrap hb_search">
+            <a href="javascript:void(0)" title="로그인 페이지" class="login_btn">LOGIN</a>
+            <a href="javascript:void(0)" title="회원가입 페이지" class="login_btn">SIGN UP</a>
+            <input type="checkbox" id="btn_search2">
+            <label for="btn_search2" class="search">
+              <img src="./image/ic_search28.png" alt="icon_search">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!--main  menu _ 메뉴 버튼 클릭 시 펼쳐짐 -->
+      <div class="mainMenu">
+        <nav class="mlnb">
+          <ul>
+            <li><a href="javascript:void(0)" title="fashion">FASHION</a>
+              <ul class="mlnb_sub">
+                <li><a href="javascript:void(0)" title="패션 트렌드">패션 트렌드</a></li>
+                <li><a href="javascript:void(0)" title="패션 아이템">패션 아이템</a></li>
+                <li><a href="javascript:void(0)" title="셀럽 스타일">셀럽 스타일</a></li>
+                <li><a href="javascript:void(0)" title="패션 뉴스">패션 뉴스</a></li>
+                <li><a href="javascript:void(0)" title="패션 화보">패션 화보</a></li>
+              </ul>
+            </li>
+
+            <li><a href="javascript:void(0)" title="beauty">BEAUTY</a>
+              <ul class="mlnb_sub">
+                <li><a href="javascript:void(0)" title="뷰티 트렌드">뷰티 트렌드</a></li>
+                <li><a href="javascript:void(0)" title="뷰티 아이템">뷰티 아이템</a></li>
+                <li><a href="javascript:void(0)" title="건강">건강</a></li>
+                <li><a href="javascript:void(0)" title="뷰티 화보">뷰티 화보</a></li>
+              </ul>
+            </li>
+
+            <li><a href="javascript:void(0)" title="love&life">LOVE&LIFE</a>
+              <ul class="mlnb_sub">
+                <li><a href="javascript:void(0)" title="여행">여행</a></li>
+                <li><a href="javascript:void(0)" title="푸드">푸드</a></li>
+                <li><a href="javascript:void(0)" title="리빙">리빙</a></li>
+                <li><a href="javascript:void(0)" title="VIEW point">VIEW point</a></li>
+              </ul>
+            </li>
+
+            <li><a href="javascript:void(0)" title="culture">CULTURE</a>
+              <ul class="mlnb_sub">
+                <li><a href="javascript:void(0)" title="엔터테인먼트">엔터테인먼트</a></li>
+                <li><a href="javascript:void(0)" title="음악">음악</a></li>
+                <li><a href="javascript:void(0)" title="아트&전시">아트&전시</a></li>
+              </ul>
+            </li>
+
+            <li><a href="javascript:void(0)" title="social">SOCIAL</a>
+              <ul class="mlnb_sub">
+                <li><a href="javascript:void(0)" title="사회">사회</a></li>
+                <li><a href="javascript:void(0)" title="커리어 팁">커리어 팁</a></li>
+                <li><a href="javascript:void(0)" title="멘토">멘토</a></li>
+              </ul>
+            </li>
+
+            <li><a href="" title="vogue video">VIDEO</a></li>
+          </ul>
+        </nav>
+
+        <div class="menuRight">
+          <div class="mR_youtube">
+            <a href="https://www.youtube.com/@VogueKorea" title="보그 코리아 유튜브">
+              <img src="./image/youtubeMockup.png" alt="youtube_thum">
+              <span>Click & Go YOUTUBE</span>
+            </a>
+          </div>
+
+          <ul class="mR_pro">
+            <li><a href="javascript:void(0)" title="정기 구독">정기 구독</a></li>
+            <li><a href="javascript:void(0)" title="회사 소개">회사 소개</a></li>
+            <li><a href="javascript:void(0)" title="광고/제휴">광고/제휴</a></li>
+            <!-- <li><a href="javascript:void(0)" title="MASTHEAD">MASTHEAD</a></li> -->
+          </ul>
+
+          <!-- <ul class="mR_sns">
+            <li><a href="javascript:void(0)" title="보그 페이스북"><img src="./image/ic_sns_facebook.png" alt="icon_facebook"></a></li>
+            <li><a href="javascript:void(0)" title="보그 트위터"><img src="./image/ic_sns_twitter.png" alt="icon_twitter"></a></li>
+            <li><a href="javascript:void(0)" title="보그 인스타그램"><img src="./image/ic_sns_insta.png" alt="icon_insta"></a></li>
+            <li><a href="javascript:void(0)" title="보그 유튜브"><img src="./image/ic_sns_youtube.png" alt="icon_youtube"></a></li>
+          </ul> -->
+        </div>
+
+        <!-- 모바일 메인메뉴 로그인 영역 -->
+        <span class="menuLogin"><a href="/" title="로그인">LOGIN</a></span>
+      </div>
+  </header>
+
+  <!-- 메인 콘텐츠 영역 -->
+  <main>
+    <!-- 1. 메인 배너 -->
+    <section class="con01">
+      <h2>메인 배너</h2>
+      <div class="con01_sliderWrap">
+        <div class="con01_slider">
+          <div class="con01_slide slide1">
+            <a href="javascript:void(0)" title="발레와 패션의 만남"><img src="./image/mbanner_ballet.png" alt="메인배너_발레와 패션의 만남"></a>
+          </div>
+          <div class="con01_slide slide2">
+            <a href="javascript:void(0)" title="발레와 패션의 만남"><img src="./image/mbanner_ballet.png" alt="메인배너_발레와 패션의 만남"></a>
+          </div>
+        </div>
+
+        <ul class="pagination">
+          <li class="act"><a href="#" title="1"></a></li>
+          <li><a href="#" title="2"></a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="con01">
+      <h2>메인 배너</h2>
+      <div>
+        <a href="javascript:void(0)" title="발레와 패션의 만남"><img src="./image/mbanner_ballet.png" alt="메인배너_발레와 패션의 만남"></a>
+      </div>
+    </section>
+    
+    <div class="mainContainer">
+    <!-- 2. best stories -->
+    <section class="con02">
+      <h2>BEST STORIES</h2>
+
+      <div class="con02_title">
+        <h2>BEST STORIES</h2>
+        <button class="left_btn"></button>
+        <button class="right_btn"></button>
+      </div>
+
+      <div class="con02_sliderWrap">
+        <ul class="con02_slider">
+          <li class="slide story">
+            <span class="bestNum">01</span>
+            <a href="javascript:void(0)" title="카라 델레바인이 초대하는 '보그 월드 2024: 파리', 라이브 보는 법!" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best01.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">패션 뉴스</span>
+                <span class="ntitle">카라 델레바인이 초대하는 '보그 월드 2024: 파리'</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">02</span>
+            <a href="javascript:void(0)" title="카라 델레바인이 초대하는 '보그 월드 2024: 파리', 라이브 보는 법!" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best02.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">뷰티 트렌드</span>
+                <span class="ntitle">올 여름 단발 스타일링, 플리피 보브'</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">03</span>
+            <a href="javascript:void(0)" title="부모님의 신혼 여행" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best03.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">LOVE</span>
+                <span class="ntitle">부모님의 신혼 여행</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">04</span>
+            <a href="javascript:void(0)" title="푸른 여름의 시간을 담은 영화 5편" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best04.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">엔터테인먼트</span>
+                <span class="ntitle">푸른 여름의 시간을 담은 영화 5편</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">05</span>
+            <a href="javascript:void(0)" title="워런 버핏의 영원한 단짝, 찰리 멍거가 남긴 어록" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best05.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">멘토</span>
+                <span class="ntitle">워런 버핏의 영원한 단짝, 찰리 멍거가 남긴 어록</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">06</span>
+            <a href="javascript:void(0)" title="지금 이 계절에 딱, 피니싱 파우더" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best06.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">뷰티 아이템</span>
+                <span class="ntitle">지금 이 계절에 딱, 피니싱 파우더</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">07</span>
+            <a href="javascript:void(0)" title="인간의 삶에 스며든 반려 로봇 ‘효순이’" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best07.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">사회</span>
+                <span class="ntitle">인간의 삶에 스며든 반려 로봇 ‘효순이’</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="slide story">
+            <span class="bestNum">08</span>
+            <a href="javascript:void(0)" title="옷장 속 꽃무늬 원피스, 다코타 존슨처럼 활용하기" >
+              <div class="imgBox">
+                <button class="btnHeart"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_best08.png" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">셀러브리티 스타일</span>
+                <span class="ntitle">옷장 속 꽃무늬 원피스, 다코타 존슨처럼 활용하기</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. fashion -->
+    <section class="con03">
+      <h2>FASHION</h2>
+
+      <div class="part1">
+        <div class="con03_title article_title">
+          <h2>FASHION</h2>
+          <a href="/" title="fashion 더보기" class="btn_more">
+            더보기 <img src="./image/ic_plus_16.png" alt="ic_plus16">
+          </a>
+        </div>
+        <div class="m_fashion">
+          <a href="javascript:void(0)" title="유행중인 크록스, 스타일리시하게 신는 법" >
+            <div class="imgBox">
+              <button class="btnHeart" onclick="toggleAct(this)"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_fashion05.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">패션 트렌드</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="ntitle">유행중인 크록스, 스타일리시하게 신는 법</span>
+  
+            </div>
+          </a>
+        </div>
+        <ul class="con03_article article_cont">
+          <li class="story">
+            <a href="javascript:void(0)" title="카라 델레바인이 초대하는 '보그 월드 2024: 파리', 라이브 보는 법!" >
+              <div class="imgBox">
+                <button class="btnHeart" onclick="toggleAct(this)"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_fashion01.jpg" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">패션 뉴스</span>
+                <span class="ntitle">카라 델레바인이 초대하는 '보그 월드 2024: 파리'</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="story">
+            <a href="javascript:void(0)" title="'이혼 주얼리'라는 새로운 유행?" >
+              <div class="imgBox">
+                <button class="btnHeart" onclick="toggleAct(this)"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_fashion02.jpg" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">패션 아이템</span>
+                <span class="ntitle">'이혼 주얼리'라는 새로운 유행?</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="story">
+            <a href="javascript:void(0)" title="카라 델레바인이 초대하는 '보그 월드 2024: 파리', 라이브 보는 법!" >
+              <div class="imgBox">
+                <button class="btnHeart" onclick="toggleAct(this)"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_fashion03.jpg" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">셀러브리티 스타일</span>
+                <span class="ntitle">옷장 속 꽃무늬 원피스, 다코타 존슨처럼 활용하기!</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+          <li class="story">
+            <a href="javascript:void(0)" title="모델들과 함께, 이토록 아름다운 프랑스 남부 여행" >
+              <div class="imgBox">
+                <button class="btnHeart" onclick="toggleAct(this)"></button>
+                <button class="btnShare"></button>
+                <img src="./image/news_fashion04.jpg" alt="news" class="news_img">
+              </div>
+              <div class="txtBox">
+                <span class="ncate">패션 화보</span>
+                <span class="ntitle">모델들과 함께, 이토록 아름다운 프랑스 남부 여행</span>
+                <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="part2 story side_story">
+        <a href="javascript:void(0)" title="유행중인 크록스, 스타일리시하게 신는 법" >
+          <div class="imgBox">
+            <button class="btnHeart" onclick="toggleAct(this)"></button>
+            <button class="btnShare"></button>
+            <img src="./image/news_fashion05.jpg" alt="news" class="news_img">
+          </div>
+          <div class="txtBox">
+            <span class="ncate">패션 트렌드</span>
+            <span class="ndate">2024.00.00 | by 보그 코리아</span>
+            <span class="ntitle">유행중인 크록스, 스타일리시하게 신는 법</span>
+
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. beauty -->
+    <section class="con04">
+      <h2>BEAUTY</h2>
+
+      <div class="con04_title article_title">
+        <h2>BEAUTY</h2>
+        <a href="/" title=" beauty 더보기" class="btn_more">
+          더보기 <img src="./image/ic_plus_16.png" alt="ic_plus16">
+        </a>
+      </div>
+      <ul class="con04_article article_cont">
+        <li class="story">
+          <a href="javascript:void(0)" title="새로운 메이크업 캔버스가 된 귀?" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_beauty01.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">뷰티 트렌드</span>
+              <span class="ntitle">새로운 메이크업 캔버스가 된 귀?</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="우유vs원유, 더 건강한 선택은?" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_beauty02.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">건강</span>
+              <span class="ntitle">우유vs원유, 더 건강한 선택은?</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="지금 이 계절에 딱, 피니싱 파우더" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_beauty03.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">뷰티 아이템</span>
+              <span class="ntitle">지금 이 계절에 딱, 피니싱 파우더</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="올여름 단발 스타일링, 플리피 보브" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_beauty04.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">뷰티 트렌드</span>
+              <span class="ntitle">올여름 단발 스타일링, 플리피 보브</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 5. love&life -->
+    <section class="con05">
+      <h2>LOVE & LIFE</h2>
+      <div class="con05_title article_title">
+        <h2>LOVE & LIFE</h2>
+        <a href="/" title=" love&life 더보기" class="btn_more">
+          더보기 <img src="./image/ic_plus_16.png" alt="ic_plus16">
+        </a>
+      </div>
+      <ul class="con05_article article_cont">
+        <li class="story">
+          <a href="javascript:void(0)" title="자크뮈스의 아름다운 파리 오피스" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_love01.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">리빙</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="ntitle">자크뮈스의 아름다운 파리 오피스</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="부모님의 신혼 여행" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_love02.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">LOVE</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="ntitle">부모님의 신혼 여행</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="여행자가 자연을 껴안는 방법, 아만폴로에서 보낸 일주일" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_love03.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">여행</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="ntitle">여행자가 자연을 껴안는 방법, 아만폴로에서 보낸 일주일</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 6. culture -->
+    <section class="con06">
+      <h2>CULTURE</h2>
+
+      <div class="part2 story">
+        <a href="javascript:void(0)" title="단체 사진으로 데뷔 15주년 자축한 2NE1" >
+          <div class="imgBox">
+            <button class="btnHeart"></button>
+            <button class="btnShare"></button>
+            <img src="./image/news_culture01.jpg" alt="news" class="news_img">
+          </div>
+          <div class="txtBox">
+            <span class="ncate">셀럽 뉴스</span>
+            <span class="ndate">2024.00.00 | by 보그 코리아</span>
+            <span class="ntitle">단체 사진으로 데뷔 15주년 자축한 2NE1</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="part1">
+        <div class="con06_title article_title">
+          <h2>CULTURE</h2>
+          <a href="/" title="culture 더보기" class="btn_more">
+            더보기 <img src="./image/ic_plus_16.png" alt="ic_plus16">
+          </a>
+        </div>
+
+          <ul class="hr_article">
+            <li class="story">
+              <a href="javascript:void(0)" title="아트 시에나에서의 한 달" >
+                <div class="imgBox">
+                  <button class="btnHeart"></button>
+                  <button class="btnShare"></button>
+                  <img src="./image/news_culture02.jpg" alt="news" class="news_img">
+                </div>
+                <div class="txtBox">
+                  <span class="ncate">아트</span>
+                  <span class="ntitle">아트 시에나에서의 한 달</span>
+                  <span class="ndate">2024.00.00 | by 보그 코리아</span>
+                  <span class="n_txt">하샴 마타르의 '시에나에서의 한 달'<br>시에나로 들어가기까지, 시에나에서 머문 한 달, 시에나에서 돌아온 이후의 시간까지. 우리는 작가의 이 여정을 함께하며 그가 오랫동안 보고자 자처한 시에나 학파의 그림을 둘러싼 어떤 이야기를 듣게 될 것이다. </span>
+                </div>
+              </a>
+            </li>
+            <li class="story">
+              <a href="javascript:void(0)" title="푸른 여름의 시간을 담은 영화 5편">
+                <div class="imgBox">
+                  <button class="btnHeart"></button>
+                  <button class="btnShare"></button>
+                  <img src="./image/news_culture03.jpg" alt="news" class="news_img">
+                </div>
+                <div class="txtBox">
+                  <span class="ncate">엔터테인먼트</span>
+                  <span class="ntitle">푸른 여름의 시간을 담은 영화 5편</span>
+                  <span class="ndate">2024.00.00 | by 보그 코리아</span>
+                  <span class="n_txt">초록이 짙어지는 계절입니다. 달을 볼 수 있는 시간보다 해를 마주하는 시간이 더 긴 계절이기도 하죠. 선선한 바람을 맞으며 초여름의 분위기를 만끽하는 것, 지금 이 시기에만 누릴 수 있는 사치이기도 합니다. 여름이 가까워지면 떠오르는 영화 다섯 편을 소개합니다. 잠시 휴대폰도, 소셜 미디어도 멀리하고 여름의 낭만을 느껴보세요.</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+      </div>
+    </section>
+
+    <!-- 7. social -->
+    <section class="con07">
+      <h2>SOCIAL</h2>
+
+      <div class="con07_title article_title">
+        <h2>SOCIAL</h2>
+        <a href="/" title=" social 더보기" class="btn_more">
+          더보기 <img src="./image/ic_plus_16.png" alt="ic_plus16">
+        </a>
+      </div>
+
+      <ul class="article_cont hr_article">
+        <li class="story">
+          <a href="javascript:void(0)" title="워런 버핏의 영원한 단짝, 찰리멍거가 남긴 어록" >
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_social01.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">멘토</span>
+              <span class="ntitle">워런 버핏의 영원한 단짝, 찰리멍거가 남긴 어록</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="n_txt">"나는 지금껏 끊임없이 독서를 하지 않는 현명한 사람은 본 적이 없습니다. 단 한 명도."</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="인간의 삶에 스며든 반려 로봇 '효순이'">
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_social2.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">사회</span>
+              <span class="ntitle">인간의 삶에 스며든 반려 로봇 '효순이'</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="n_txt">말벗이 되어주고 일과를 챙기는 반려로봇 '효순이'가 인간의 삶에 스며든 장면</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="인류를 덮친 기후 위기, 샤넬 펀드와 리움미술관의 ‘아이디어 뮤지엄’에서 답을 모색하다.'">
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_social03.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">사회</span>
+              <span class="ntitle">인류를 덮친 기후 위기, 샤넬 펀드와 리움미술관의 ‘아이디어 뮤지엄’에서 답을 모색하다.</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="n_txt">생태적 전환, 그러면 무엇을 알아야 할까?</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="나의 추하고 아름다운 실패들">
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_social04.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">멘토</span>
+              <span class="ntitle">나의 추하고 아름다운 실패들</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="n_txt">정지음은 말한다. 이 실패는 온전히 나의 것이라고.</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="Dear my blue'">
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_social05.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">멘토</span>
+              <span class="ntitle">Dear my blue</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="n_txt">나의 서늘한 불안과 공포에게, '나의 피투성이 연인'의 감독 유지영은 끊임없이 질문을 던진다.</span>
+            </div>
+          </a>
+        </li>
+        <li class="story">
+          <a href="javascript:void(0)" title="답은, 네게 있다니까?'">
+            <div class="imgBox">
+              <button class="btnHeart"></button>
+              <button class="btnShare"></button>
+              <img src="./image/news_social06.jpg" alt="news" class="news_img">
+            </div>
+            <div class="txtBox">
+              <span class="ncate">사회</span>
+              <span class="ntitle">답은, 네게 있다니까?</span>
+              <span class="ndate">2024.00.00 | by 보그 코리아</span>
+              <span class="n_txt">배해선의 자신을 알아가는 시간 끝에 마주한 진짜 '나'</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+    </div>
+  </main>
+
+  <!-- 푸터영역 -->
+  <footer>
+    <div class="footerWrapper">
+      <!--  -->
+      <button class="topBtn"></button>
+      <!--  -->
+      <div class="f_left">
+        <h2><a href="index.html" title="메인화면 바로가기">
+          <img src="./image/logo_white_m.svg" alt="하단 로고 이미지">
+        </a></h2>
+      </div>
+      <div class="f_right">
+        <ul class="sns">
+          <li><a href="javascript:void(0)" title="보그 페이스북"><img src="./image/ic_sns_facebook.png" alt="icon_facebook"></a></li>
+          <li><a href="javascript:void(0)" title="보그 트위터"><img src="./image/ic_sns_twitter.png" alt="icon_twitter"></a></li>
+          <li><a href="javascript:void(0)" title="보그 인스타그램"><img src="./image/ic_sns_insta.png" alt="icon_insta"></a></li>
+          <li><a href="javascript:void(0)" title="보그 유튜브"><img src="./image/ic_sns_youtube.png" alt="icon_youtube"></a></li>
+        </ul>
+
+        <nav class="f_lnb">
+          <ul>
+            <li><a href="javascript:void(0)" title="정기구독">정기구독</a></li>
+            <li><a href="javascript:void(0)" title="회사소개">회사소개</a></li>
+            <li><a href="javascript:void(0)" title="광고/제휴">광고/제휴</a></li>
+            <li><a href="javascript:void(0)" title="이용약관">이용약관</a></li>
+            <li><a href="javascript:void(0)" title="개인정보처리방침">개인정보처리방침</a></li>
+            <li><a href="javascript:void(0)" title="이메일무단수집금지">이메일무단수집금지</a></li>
+            <li><a href="javascript:void(0)" title="사이트맵">사이트맵</a></li>
+          </ul>
+        </nav>
+
+        <address>
+          <p>보그 코리아</p>
+          <p>서울시 00구 00대로 123(00동)</p>
+          <p>대표자 : 000 사업자등록번호 : 000-00-00000 통신판매업신고 : 제 0000-서울00-00000호</p>
+          <p>이메일 : elle.korea@elle.co.kr</p>
+          <p class="reserve">&#169; 2024 Vogue Korea. All Rights Reserved.</p>
+        </address>
+      </div>
+
+    </div>
+  </footer>
+</body>
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <script>    
+    // 오늘 날짜
+    const today = new Date();
+    // 년도
+    const year = today.getFullYear();
+    // 월
+    const month = (today.getMonth()+1).toString().padStart(2, '0');
+    // 일
+  const day = today.getDate().toString().padStart(2, '0');
+  const dateInfo = `${year}년 ${month}월 ${day}일`;
+  date_info.innerHTML = dateInfo;
+  </script>
+
+  <!-- sticky header + main menu -->
+  <script src="./script/pj03_header.js"></script>
+
+  <!-- main banner slider -->
+  <script src="./script/pj03_mainBanner_slider.js"></script>
+
+  <!-- best story slider -->
+  <script src="./script/pj03_best_slider.js"></script>
+
+  <!-- 찜버튼 이미지 전환 -->
+  <script src="./script/pj03_heart_btn.js" defer></script>
+
+  <!-- 탑버튼 애니메이션 -->
+  <script src="./script/pj03_top.js"></script> 
+</html>

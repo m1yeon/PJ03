@@ -1,0 +1,378 @@
+
+/* section{border: 1px solid #f00;} */
+.mainContainer{
+  width: 100%;
+  padding: 0px 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+section > h2{display: none;}
+section:not(.con01){width: 100%; margin: 100px auto 0px auto }
+
+/* 1. 메인 배너 */
+.con01{
+  width: 100%;
+  height: calc(100vh - 190px);
+  background: #E9E5DA;
+  padding-top: 170px;
+}
+.con01_sliderWrap{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+}
+.con01_slider{
+  display: flex;
+  width: 200%;
+}
+.con01_slide{width: 100%;}
+.con01_slide > a{
+  display: block;
+  text-align: center;
+}
+.con01_slide > a > img{
+  /* width: 100%; */
+  height: calc(100vh - 190px);
+  vertical-align: top;
+}
+
+.con01_sliderWrap > .pagination{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+.con01_sliderWrap > .pagination > li > a{
+  display: inline-block;
+  width: 12px; height: 12px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+}
+.con01_sliderWrap > .pagination > .act > a{opacity: 1;}
+
+/* best stories */
+/* best story title */
+.con02_title{
+  width: 100%;
+  background: #222;
+  height: 60px;
+  border-radius: 30px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.con02_title > h2{
+  color: #fff;
+  font-size: 32px;
+  text-indent: 30px;
+  line-height: 60px;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.con02_title > button{
+  border: none;
+  background-color: rgba(1,1,1,0);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: cover;
+  width: 30px;
+  height: 28px;
+  cursor: pointer;
+}
+.con02_title > .left_btn{
+  background-image: url(../image/btn_left.png);
+  right: 74px;
+}
+.con02_title > .right_btn{
+  background-image: url(../image/btn_right.png);
+  right: 30px;
+}
+
+/* 2. best story slider */
+.con02{position: relative;}
+.con02_sliderWrap{
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  left: 0%;
+}
+.con02_slider{
+  position: relative;
+  left: 0; top: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  pointer-events: none;
+  width: calc(200% + 20px);
+  gap: 20px;
+  z-index: 10;
+  user-select: none;
+}
+.con02_slider > .slide{
+  width: 100%;
+  border:  1px solid #222;
+  border-radius: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+.con02_slider > .slide > .bestNum{
+  font-family: "DM Serif Display", serif;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 25;
+  color: #fff;
+}
+.con02 .imgBox{
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.con02 .imgBox::before{
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+
+.con02 .imgBox img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+.con02 .txtBox{
+  position: absolute;
+  top: 0px;
+  background: linear-gradient(360deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%);
+  margin: 0px;
+  padding-top: 5px;
+  z-index: 20;
+}
+.con02 .txtBox .ncate{color:#d00; display: none;}
+.con02 .txtBox .ndate{color:#ccc; display: none;}
+.con02 .txtBox .ntitle{
+  color: #fff; 
+  font-size: 15px;
+  padding-left: 50px;
+  padding-right: 5px;
+  line-height: 150%;
+}
+
+/* 공통서식 */
+/* 기사 이미지 부분*/
+.imgBox{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.imgBox::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 80px;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%);
+}
+
+.imgBox > button{
+  width: 36px;
+  height: 36px;
+  background-size: cover;
+  background-color: rgba(255,255,255,.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  bottom: 15px;
+}
+.imgBox > .btnHeart{
+  background-image: url(../image/btn_heart.png);
+  right: 55px;
+  z-index: 1000;
+}
+.imgBox > .btnHeart.fullH{
+  background-image: url(../image/btn_heart_full.png);
+  /* right: 55px; */
+}
+.imgBox > .btnShare{
+  background-image: url(../image/btn_share.png);
+  right: 10px;
+}
+.imgBox .news_img{width: 100%; vertical-align: top; display: inline-block; transition: 0.4s;}
+
+.story:hover .imgBox > .news_img{
+  transform: scale(1.1);
+}
+.story:hover .txtBox > .ntitle{
+  text-decoration: underline;
+}
+
+/* 기사 텍스트 부분*/
+.txtBox{margin-top: 15px;}
+.txtBox > .ncate, .txtBox > .ntitle, .txtBox > .ndate{line-height: 130%;}
+.txtBox > .ncate{
+  font-size: 13px;
+  font-weight: 600;
+  color: #c00;
+}
+.txtBox > .ntitle{
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 0px;
+  display: block;
+}
+.txtBox > .ndate{
+  font-size: 12px;
+  color: #999;
+}
+.article_title{
+  width: 100%;
+  height: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  line-height: 60px;
+  border-top: 2px solid #222;
+  border-bottom: 4px solid #222;
+  justify-content: space-between;
+}
+.article_title > h2{
+  font-size: 32px;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.article_title > .btn_more{
+  font-weight: 500;
+  font-size: 14px;
+}
+.article_title > .btn_more > img{
+  width: 14px;
+  transform: translateY(1px);
+}
+.article_cont{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+
+/*fashion, culture*/
+.con03, .con06{
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+.part1{width: 60%;}
+
+.con03 .article_cont{
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.con03 > .part1 > .m_fashion{display: none;}
+
+.part1 > .article_cont > li, .con07 .article_cont li{width: calc(50% - 15px);}
+.part1 > .article_cont > li > .imgBox > img{width: 100%;}
+
+.part2{
+  width: 40%;
+  height: fit-content;
+  position: relative;
+}
+.part2 .imgBox > button{
+  bottom: 15px;
+  margin-right: 5px;
+}
+.part2 .txtBox > .ntitle{
+  font-size: 22px;
+  font-weight: 500;
+  padding: 8px 0px;
+}
+
+/* fashion, beauty 글자 이미지 위 배치 */
+.part2 .txtBox, .con05_article .txtBox{
+  position: absolute;
+  bottom: 0px;
+  margin: 15px;
+  z-index: 10;
+  width: 70%;
+}
+.part2 .txtBox > .ncate, .con05_article .txtBox > .ncate{
+  font-size: 13px;
+  font-weight: 600;
+  color: #f00;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.part2 .txtBox > .ntitle, .con05_article .txtBox > .ntitle{
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.part2 .txtBox > .ndate, .con05_article .txtBox > .ndate{
+  font-size: 12px;
+  color: #ccc;
+  display: inline-block;
+}
+
+/* love&life */
+.con05_article > li{position: relative;}
+.con05_article .txtBox > .ntitle{line-height: 110%;}
+
+/* culture */
+.con06{display: flex; gap: 30px;}
+.con06 ul{display: block;}
+.con06 ul li:first-child{padding-bottom: 30px;}
+
+.hr_article > li > a{width: 100%; display: flex; gap: 20px}
+.hr_article > li .imgBox{width: calc(40% - 20px);}
+.hr_article > li.imgBox img{width: 100%;}
+.hr_article > li .txtBox{width: 60%; margin-top: 0px;}
+.hr_article > li .txtBox .n_txt{
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 15px;
+  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* social */
+.con07 ul{flex-wrap: wrap;}
+.con07 ul li .imgBox{width: calc(50% - 20px);}
+.con07 ul li .imgBox img{width: 100%;}
+.con07 ul li .txtBox{width: 50%;}
+
+.con07 ul > li .txtBox .n_txt{
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 15px;
+  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

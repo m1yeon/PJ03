@@ -1,0 +1,770 @@
+@charset "utf-8";
+
+input[type=checkbox]{display: none;}
+
+.headerWrapper{
+  width: 100%;
+  z-index: 9999;
+  /* background: #fff; */
+  background: rgba(255,255,255,.6);
+  transition: 0.4s;
+  position: fixed;
+  top: 0;
+}
+.h_mid_wrapper, .h_top, .h_bottom_wrapper{
+  background: #fff;
+}
+/* @media screen and (min-width:1025px) {} */
+
+/* PC 헤더 서식 */
+  .h_top, .h_mid, .h_bottom{
+    width: 100%;
+    padding: 0px 8%;
+    box-sizing: border-box;
+  }
+
+  /* header top */
+  .h_top{
+    position: relative;
+    top: -110px;
+    height: 25px;
+    display: flex;
+    z-index: 9999;
+    background: #fff;
+  }
+
+  .h_top > #date_info, .h_top .weather, .h_top #lan{
+    color: #555;
+    font-size: 12px;
+  }
+  #date_info{
+    position: absolute;
+    line-height: 25px;
+    left: 8%;
+  }
+  .h_top_right{
+    position: absolute;
+    right: 8%;
+  }
+  .h_top > .h_top_right > .weather{line-height: 25px;}
+  .h_top > .h_top_right > .weather > img{
+    height: 17px;
+    transform: translateY(4px);
+    padding-right: 5px;
+  }
+  .h_top > .h_top_right > #lan{border: none;}
+
+  /* header middle */
+  .h_mid_wrapper{
+    width: 100%;
+    border-top: 10px solid #222;
+    position: relative;
+    top: 25px;
+    box-sizing: border-box;
+    z-index: 9999;
+  }
+  .h_mid{
+    position: relative;
+    height: 100px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .h_mid > h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .h_mid > h1 > a{
+    background-image: url('../image/logo_vogue_main.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 230px;
+    height: 72px;
+    display: inline-block;
+  }
+
+  .hml_txt01{
+    font-family: "DM Serif Display", serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 26px;
+    line-height: 22px;
+  }
+  .hml_txt02{
+    font-size: 12px;
+    color: #666;
+    line-height: 22px;
+  }
+  .h_mid_right > a{
+    line-height: 100px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  .searchWrap  .search{
+    width: 28px; height: 28px;
+    display: inline-block;
+    transform: translateY(8px);
+  }
+  .searchWrap .search > img{width: 25px;}
+
+  /* header bottom */ 
+  .h_bottom_wrapper{
+    width: 100%;
+    height: 35px;
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+    z-index: 9999;
+  }
+  .h_bottom{
+    height: 35px;
+    margin: 0px auto;
+    display: flex;
+    line-height: 35px;
+    position: relative;
+    overflow: hidden;
+  }
+    /* header bottom 고정 */ 
+    .hd_active{transform: translateY(-134px);}
+
+  /* .h_bottom .menu_btn{cursor: pointer; width: 35px; height: 35px;}
+  .h_bottom .menu_btn > img{width: 28px; transform: translateY(3.5px);}
+  .close_btn{
+    content: url(../image/ic_close.png); transform: scale(0.8);
+  } */
+  /* 수정 */
+  .h_bottom .menu_btn{
+    text-align: center;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    margin-top: 4px;
+  }
+  .h_bottom .menu_btn > span{
+    background-image: url(../image/icon_menu28.png);
+    background-size: cover;
+    width: 28px; height: 28px;
+    display: inline-block;
+  }
+  .close_btn{
+    background-image: url(../image/ic_close.png) !important;
+  }  
+
+  /* header bottom 로고 */
+  .hb_logo{width: 86px; height: 18px; margin-top: 7px; margin-left: 10px; display: none; transition: 0.4s;}
+  .hb_logo > a{width: 100%; opacity: 1;}
+  .hb_logo > a > img{width: 100%; vertical-align: top;}
+
+  /* 스크롤 시 보이게 하기 */
+  .hb_search{
+    display: none;
+    /* display: inline-block; */
+    opacity: 1;
+    position: absolute;
+    right: 8%;
+    margin-top: -5px
+  }
+  .hb_search > a{
+    padding-right: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  .hb_search .search img{
+    margin-top: 2px;
+  }
+
+  .h_gnb{
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .h_gnb > ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .h_gnb > ul > li > a{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 0px 15px;
+  }
+  .h_gnb > ul > li:hover > a{
+    /* text-decoration: underline; */
+  }
+
+  /* 메인 메뉴 - 클릭 시 펼쳐짐 */
+  .mainMenu{
+    display: flex;
+    justify-content: space-between;
+    height: 0vh;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s;
+    width: 100%;
+    padding: 0 8%;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  .mainMenuAct{
+    height: 100vh;
+    z-index: 9999;
+  }
+  .mainMenu > .mlnb{
+    position: relative;
+    width: 85%;
+  }
+  .mainMenu > .mlnb > ul{
+    transition: 0.4s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-53%);
+  }
+  .mainMenu > .mlnb > ul > li{
+    display: flex;
+    line-height: 510%;
+    margin: 15px 0px;
+  }
+  .mainMenu > .mlnb > ul > li > a{
+    font-size: 54px;
+    font-weight: 500;
+    display: block;
+    margin-right: 40px;
+  }
+  .mainMenu > .mlnb > ul > li .mlnb_sub{
+    display: flex;
+    gap: 10px;
+  }
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li > a{
+    padding: 0px 15px;
+    font-weight: 500;
+    color: #929292;
+  }
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li:hover > a{color: #222; font-weight: 700;}
+
+  .menuLogin{display: none}
+
+  /* menuRight */
+  .menuRight{
+    /* width: 25%; */
+    width: 260px;
+    padding-top: 60px;
+  }
+  .menuRight > .mR_youtube{
+    width: 260px;
+    position: relative;
+  }
+  .menuRight > .mR_youtube img{
+    width: 100%;
+  }
+  .menuRight > .mR_youtube span{
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    background: #fff;
+    border: 1px solid #222;
+    top: 90%;
+    left: 50%;
+    width: 70%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 10px 0;
+  }
+  .menuRight > .mR_pro{
+    margin: 15px 0px;
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+  }
+  .menuRight > .mR_pro a{
+    padding: 5px;
+    line-height: 200%;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .menuRight > .mR_pro > li:first-child a{font-weight: 600;}
+
+  .menuRight > .mR_sns{
+    display: flex;
+    justify-content: space-around;
+    background: #222;
+    border-radius: 15px;
+  }
+  .menuRight > .mR_sns > li{
+    /* background: #222; */
+    width: 44px;
+  }
+  .menuRight > .mR_sns > li img{
+    width: 100%;
+  }
+
+  /* footer */
+  footer{background: #222; margin-top: 200px;}
+  footer a, address > p{color: #efefef;}
+  .footerWrapper{
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    padding: 40px 8%;
+    box-sizing: border-box;
+  }
+  
+  .f_left{width: 20%; border-right: 1.5px solid #efefef;}
+  .f_left > h2{width: 120px; margin: 15px auto;}
+  .f_left > h2 img{width: 100%;}
+  
+  .f_right{width: 80%; margin-left: 40px;}
+  .f_right > .sns{display: flex;}
+  .f_right > .sns > li > a{display: block;}
+  .f_right > .sns > li > a > img{width: 55px;}
+
+  .f_right > .f_lnb{line-height: 50px;}
+  .f_right > .f_lnb > ul{display: flex; gap: 10px;}
+  .f_right > .f_lnb > ul > li > a{font-size: 13px;  display: block; padding: 0px 15px;}
+  .f_right > .f_lnb > ul > li:nth-child(3) > a{font-weight: 600;}
+  .f_right > .f_lnb > ul > li > a:hover{text-decoration: underline;}
+  address > p{font-size: 13px; font-weight: 300; line-height: 160%; padding-left: 15px;}
+  address .reserve{margin-top: 10px;}
+
+  /* 탑버튼 */
+  .topBtn{
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 34px;
+    z-index: 9000;
+    background-image: url(../image/btn_top.png);
+    background-size: cover;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    box-shadow: 0px 0px 8px 1px rgba(9, 9, 9, .15);
+    transition: 0.4s;
+  }
+  .topBtn > img{
+    width: 100%;
+  }
+  .topBtn:hover{
+    box-shadow: 0px 2px 8px 3px rgba(9, 9, 9, .25);
+    bottom: 45px;
+  }
+
+  /* pc작은버전 */
+  @media screen and (min-width:1025px) and (max-width:1300px){
+    .mainMenu > .mlnb{
+      width: 100%;
+    }
+    .menuRight{
+      position: absolute;
+      right: 8%;
+      top: 100%;
+      transform: translateY(-230px);
+      transition: 0.4s;
+    }
+    .menuRight > .mR_youtube::before{
+      content: "";
+      background-image: url(../image/menuR_arrow.png);
+      width: 70px;
+      height: 160px;
+      background-size: cover;
+      display: block;
+      position: absolute;
+      top: -70px;
+      left: -61px;
+    }
+    .menuRight > .mR_youtube span{
+      top: -70px;
+      left: 38%;
+    }
+    .menuRight > .mR_pro{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      
+    }
+    .menuRight:hover{
+      transform: translateY(-418px);
+    }
+    
+  }
+
+/* ------- */
+/* tablet */
+@media screen and (min-width:768px) and (max-width:1024px) {
+  /* 가로 스크롤 방지 */
+  html, body{max-width: 100%; overflow-x: hidden;}
+
+  /* header */
+  .h_mid, .h_bottom{width: 100%; padding: 0px 4%;}
+  .h_top{display: none;}
+
+  /* header middle */
+  .h_mid_wrapper{top: 0px;}
+  .h_mid > h1 > a{width: 160px; height: 50px;}
+  .hml_txt01{
+    font-size: 16px;
+    font-size: 1.031rem;
+    padding-top: 30px;
+    line-height: 20px;
+  }
+  .hml_txt02{font-size: 0.70rem;}
+  .h_mid_right > a{font-size: 0.875rem;}
+  .h_mid_right  .search{transform: translateY(7px);}
+  .h_mid_right .search > img{width: 24px;}
+
+  /* header bottom */
+  /* header bottom 고정 */
+  .hd_active{transform: translateY(-109px);}
+  .h_bottom .menu_btn > img{width: 26px;  transform: translateY(4.5px);}
+  .close_btn{transform: scale(0.85) !important;}
+
+  /* header bottom 로고 */
+  .hb_logo{width: 76px; height: 16px; margin-top: 9px; margin-left: 5px;}
+
+  /* 스크롤 시 보이게 하기 */
+  .hb_search{right: 4%;}
+  .hb_search > a{display: none;}
+  .hb_search .search img{margin-top: 2px;}
+  .h_gnb{width: 50%; margin: 0 auto;}
+  .h_gnb > ul > li > a{font-size: 0.938rem;}
+
+  /* 메인 메뉴 - 클릭 시 펼쳐짐 */
+  .mainMenu{
+    /* background-color: skyblue; */
+  }
+
+  .mainMenu > .mlnb{
+    width: 100%;
+  }
+  .mainMenu > .mlnb > ul{}
+  .mainMenu > .mlnb > ul > li{
+    line-height: 240%;
+    margin: 35px 0px;
+  }
+  .mainMenu > .mlnb > ul > li > a{
+    font-size: 40px;
+    /* font-size: 2.125rem; */
+    margin-right: 25px;
+  }
+
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li > a{
+    padding: 0px 7px;
+    font-size: 15px;
+    font-size: 0.938rem;
+    font-weight: 400;
+    color: #717171;
+  }
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li:hover > a{color: #717171; font-weight: 400;}
+
+  /* menuRight */
+  .menuRight{
+    position: absolute;
+    width: 200px;
+    right: 4%;
+    top: 100%;
+    transform: translateY(-195px);
+    transition: 0.4s;
+  }
+  .menuRight > .mR_youtube img{width: 200px;}
+  .menuRight > .mR_youtube::before{
+    content: "";
+    background-image: url(../image/menuR_arrow.png);
+    width: 40px;
+    height: 110px;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: -52px;
+    left: -25px;
+    transform: rotate(20deg);
+  }
+  .menuRight > .mR_youtube span{
+    top: -30px;
+    left: 38%;
+    width: 60%;
+    font-size: 12px;
+    padding: 7px 0;
+    background: #222;
+    color: #fff;
+  }
+  .menuRight > .mR_pro{
+    display: none;
+  }
+  .menuRight:hover{
+    transform: auto;
+  }
+
+  .menuLogin{display: none}
+  .menuLogin a{display: none;}
+
+ /* footer */
+  footer{margin-top: 150px;}
+
+  .footerWrapper{
+    display: inline-block;
+    padding: 40px 6%;
+    position: relative;
+  }
+
+  .f_left{border-right: none;}
+  .f_left > h2{margin: 15px 10px;}
+  
+  .f_right{width: 100%; margin: 0px;}
+  .f_right > .sns{position: absolute; top: 40px; right: 6%;}
+
+  .f_right > .f_lnb{margin: 40px 0px 20px 0px; line-height: 140%; padding-bottom: 10px;}
+  .f_right > .f_lnb > ul{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* 탑버튼 */
+  .topBtn{
+    right: 28px;
+    bottom: 26px;
+    width: 42px;
+    height: 42px;
+  }
+  .topBtn:hover{
+    box-shadow: 0px 0px 8px 1px rgba(9, 9, 9, .15);
+    bottom: 26px;
+  }
+}
+
+/* ------- */
+/* mobile */
+@media screen and (max-width:767px) {
+  html, body{max-width: 100%; overflow-x: hidden;}
+
+  /* header */
+  .headerWrapper{
+    /* box-shadow: 0px 0px 10px rgba(7,7,7,.15); */
+    height: 55px;
+  }
+  .h_top, .h_mid_wrapper{display: none;}
+
+  /* header bottom */
+  .h_bottom_wrapper{
+    height: 55px;
+    border: none;
+    box-shadow: 0px 0px 8px 1px rgba(6,6,6,.1);
+  }
+  .h_bottom{
+    position: relative;
+    padding: 0 15px;
+    height: 55px;
+  }
+  .h_bottom .menu_btn, .h_bottom .hb_logo{
+    position: absolute;
+  }
+  /* header bottom 고정 */ 
+  .hd_active{transform: translateY(0px);}
+
+  .h_bottom .menu_btn{
+    width: 34px;
+    height: 34px;
+    right: 10px;
+    padding: 8.5px 0;
+  }
+  .h_bottom .menu_btn > span{
+    width: 26px; height: 26px;
+  }
+
+
+  /* header bottom 로고 */
+  .hb_logo{
+    display: inline-block; 
+    width: 108px;
+    height: 26px;
+    margin: 0px; 
+    top: 50%;
+    transform: translateY(-50%);}
+
+  /* 스크롤 시 보이게 하기 */
+  .hb_search{
+    display: inline-block;
+    right: 50px;
+    margin-top: 3px;
+  }
+  .h_gnb, .hb_search > a{display: none;}
+
+  .hb_search .search{
+    transform: translateY(1px);
+    display: inline-block;
+    width: 34px; height: 34px;
+    text-align: center;
+    padding: 7px 0;
+    cursor: pointer;
+  }
+  .hb_search .search img{
+    vertical-align: top;
+    width: 26px;
+  }
+
+  /* 메인 메뉴 - 클릭 시 펼쳐짐 */
+  .mainMenu{
+    position: relative;
+    display: block;
+    padding: 0;
+  }
+  .mainMenuAct{
+    height: 100vh;
+    z-index: 9999;
+  }
+  .mainMenu > .mlnb{
+    position: relative;
+    padding-top: 2px;
+    width: 100%;
+    height: fit-content;
+    /* height: 100%; */
+  }
+  .mainMenu > .mlnb > ul{
+    transition: 0.4s;
+    position: absolute;
+    top: 90px;
+    transform: translateY(0%);
+    width: 100%;
+  }
+  .mainMenu > .mlnb > ul > li{
+    display: block;
+    line-height: 300%;
+    margin: auto;
+  }
+  .mainMenu > .mlnb > ul > li > a{
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: block;
+    margin-right: 0px;
+    padding: 0px 17px;
+    border-bottom: 1.8px solid #222;
+    position: relative;
+  }
+
+  .mainMenu > .mlnb > ul > li:not(:last-child) > a::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 1.8px;
+    background: #444;
+  }
+  .mainMenu > .mlnb > ul > li:not(:last-child) > a::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5px;
+    height: 13px;
+    background: #444;
+    border-radius: 10px;
+  }
+  /* 메인메뉴 플러스 버튼 마이너스로 바꾸기 */
+  .mainMenu > .mlnb > ul > li.plusact > a::after{display: none !important;}
+  .mainMenu > .mlnb > ul > li:first-child > a{border-top: 1.8px solid #222;}
+  .mainMenu > .mlnb > ul > li .mlnb_sub{display: none;}
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li{border-bottom: 1px solid #333;}
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li:last-child{border-bottom: 1.8px solid #222;}
+
+  .mainMenu > .mlnb > ul > li .mlnb_sub > li > a{
+    padding: 0px 15px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #333;
+    display: block;
+  }
+
+  .mainMenu .mlnb ul li:last-child::after{
+    content: "Fashion Magazine";
+    color: #222;
+    font-size: 18px;
+    font-family: "DM Serif Display", serif;
+    position: absolute;
+    bottom: -80px;
+    text-align: center;
+    width: 100%;
+  }
+  .mainMenu .mlnb ul li:first-child::before{
+    content: "Get Beauty Tips, Fashion Trends";
+    font-size: 13px;
+    position: absolute;
+    bottom: -100px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* menuRight */
+  .menuRight{display: none;}
+
+  .menuLogin{
+    display: block;
+    position: relative;
+    top: 30px;
+    left: 64px;
+  }
+  .menuLogin a{
+    font-weight: 500;
+    line-height: 160%;
+  }
+  .menuLogin::before{
+    position: absolute;
+    left: -50px;
+    content: "";
+    background-image: url(../image/ic_user.png);
+    background-size: cover;
+    width: 38px; height: 38px;
+    margin-top: 3px;
+    display: inline-block;
+  }
+  .menuLogin::after{
+    line-height: 120%;
+    content: "로그인 하시고 더 많은 정보를 읽어보세요 :)";
+    font-size: 12px;
+    font-size: 0.75rem;
+    display: block;
+  }
+
+ /* footer */
+  footer{background: #222; margin-top: 150px;}
+  footer a, address p{color: #efefef;}
+  .footerWrapper{
+    width: 100%;
+    margin: 0px auto;
+    padding: 40px 0px;
+    display: block;
+  }
+  .f_left{border-right: none; width: auto; padding-bottom: 20px;}
+  .f_left > h2{width: 100px; margin: 15px auto;}
+  .f_left > h2 img{width: 100%;}
+  
+  .f_right{width: 70%; margin: 0 auto;}
+  .f_right > .sns{display: flex; justify-content: space-between;}
+  .f_right > .sns > li > a{display: block;}
+  .f_right > .sns > li > a > img{width: 55px;}
+
+  .f_right > .f_lnb{line-height: 20px; padding: 10px 0px 20px 0px;}
+  .f_right > .f_lnb > ul{display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row;}
+  
+  .f_right > .f_lnb > ul > li > a{font-size: 13px;  display: block; padding: 0px 5px;}
+  .f_right > .f_lnb > ul > li:nth-child(5) > a{font-weight: 600;}
+  .f_right > .f_lnb > ul > li > a:hover{text-decoration: underline;}
+  address > p{font-size: 13px; font-weight: 300; line-height: 160%; padding: 0px 5px;}
+  address .reserve{margin-top: 10px;}
+
+  /* 탑버튼 */
+  .topBtn{bottom: 20px; right: 20px; width: 36px; height: 36px;}
+} 
